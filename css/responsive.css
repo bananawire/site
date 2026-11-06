@@ -3,7 +3,8 @@
         grid-template-columns: 1fr;
         gap: 34px;
     }
-    .specs {
+    .specs,
+    .specs--three {
         grid-template-columns: 1fr;
         gap: 34px;
         align-items: center;
@@ -30,5 +31,100 @@
     .wall-device {
         right: 10%;
         width: 150px;
+    }
+}
+
+/* Clair Niño deck theme (index.html) */
+@media (max-width: 1024px) {
+    .theme-deck .specs--steps,
+    .theme-deck .specs--kit {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 880px) {
+    .theme-deck .section,
+    .theme-deck .section--cta {
+        padding: 80px 0;
+    }
+
+    .theme-deck .hero__content {
+        padding: 40px 0 80px;
+    }
+
+    .theme-deck .split,
+    .theme-deck .cta,
+    .theme-deck .ai-alert {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .theme-deck .photo--tall img {
+        aspect-ratio: 4 / 3;
+    }
+
+    .theme-deck .metrics {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin-top: 64px;
+    }
+
+    .theme-deck .specs,
+    .theme-deck .specs--three {
+        align-items: start;
+    }
+
+    .theme-deck .specs--three {
+        grid-template-columns: 1fr;
+    }
+
+    .theme-deck .spec {
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .theme-deck .ai-alert {
+        margin-top: 64px;
+    }
+}
+
+@media (max-width: 560px) {
+    .theme-deck .container {
+        width: calc(100% - 32px);
+    }
+
+    .theme-deck .specs--steps,
+    .theme-deck .specs--kit {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .theme-deck .hero__cta .btn,
+    .theme-deck .cta__buttons .btn {
+        flex: 1 1 100%;
+    }
+
+    .theme-deck .hero__band .credit {
+        text-align: left;
+    }
+
+    .theme-deck .disclaimer {
+        padding: 72px 0 32px;
+    }
+
+    .theme-deck .disclaimer__plate {
+        font-size: 16px;
+        padding: 14px 18px;
+    }
+
+    .theme-deck .specs--two,
+    .theme-deck .pricing-cards {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .theme-deck .credit--plate {
+        left: 16px;
+        right: auto;
     }
 }

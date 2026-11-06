@@ -1,208 +1,228 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clair</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
-    <script src="https://unpkg.com/lucide@latest"></script>
-  </head>
-  <body>
-    <header class="header">
-      <nav class="nav container" data-i18n-aria="nav.aria_nav" aria-label="Main">
-        <a class="brand" href="index.html">
-          <img src="assets/clair.svg" alt="Clair Logo" class="brand__logo" />
-          <span class="sr-only">Clair</span>
-        </a>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Producto · Clair Niño</title>
+        <meta name="theme-color" content="#F3F6F6" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+        <script src="https://unpkg.com/lucide@latest"></script>
+    </head>
 
-        <!-- Desktop Navigation -->
-        <ul class="nav__links-desktop" role="list">
-          <li><a href="about.html" data-i18n="page.about">About</a></li>
-          <li><a href="product.html" data-i18n="page.product">Product</a></li>
-          <li><a href="pricing.html" data-i18n="page.pricing">Pricing</a></li>
-        </ul>
+    <body class="theme-deck">
+        <header class="header">
+            <nav class="nav container" data-i18n-aria="nav.aria_nav" aria-label="Principal">
+                <a class="brand" href="index.html">
+                    <img src="assets/clair.svg" alt="Clair Niño" class="brand__logo" />
+                </a>
 
-        <div class="nav__actions-desktop">
-          <button
-            class="icon-btn lang-toggle-desktop"
-            type="button"
-            data-i18n-aria="nav.aria_lang"
-            aria-label="Select language"
-            aria-expanded="false"
-            aria-haspopup="true"
-          >
-            <i data-lucide="globe" class="icon"></i>
-          </button>
-<a
-              class="icon-btn"
-              type="button"
-              data-i18n-aria="nav.aria_account"
-              aria-label="Account"
-              href="https://clair-ui.vercel.app/"
-            >
-              <i data-lucide="circle-user" class="icon"></i>
-            </a>
-        </div>
+                <ul class="nav__links-desktop" role="list">
+                    <li><a href="about.html" data-i18n="page.about">Nosotros</a></li>
+                    <li><a href="product.html" data-i18n="page.product" aria-current="page">Producto</a></li>
+                    <li><a href="pricing.html" data-i18n="page.pricing">Precios</a></li>
+                </ul>
 
-        <!-- Mobile Menu Toggle -->
-        <button
-          class="menu-toggle"
-          id="menuToggle"
-          data-i18n-aria="nav.open_menu"
-          aria-label="Open menu"
-          aria-expanded="false"
-        >
-          <i data-lucide="menu" class="icon"></i>
-        </button>
+                <div class="nav__actions-desktop">
+                    <button
+                        class="icon-btn lang-toggle-desktop"
+                        type="button"
+                        data-i18n-aria="nav.aria_lang"
+                        aria-label="Seleccionar idioma"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                    >
+                        <i data-lucide="globe" class="icon"></i>
+                    </button>
+                    <a
+                        class="icon-btn"
+                        data-i18n-aria="nav.aria_account"
+                        aria-label="Cuenta"
+                        href="https://clair-ui.vercel.app/"
+                    >
+                        <i data-lucide="circle-user" class="icon"></i>
+                    </a>
+                </div>
 
-        <!-- Mobile Menu Overlay -->
-        <div class="nav__menu" id="navMenu">
-          <div class="nav__menu-inner">
-            <ul class="nav__links-mobile" role="list">
-              <li><a href="about.html" class="menu-link" data-i18n="page.about">About</a></li>
-              <li><a href="product.html" class="menu-link" data-i18n="page.product">Product</a></li>
-              <li><a href="pricing.html" class="menu-link" data-i18n="page.pricing">Pricing</a></li>
-            </ul>
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    data-i18n-aria="nav.open_menu"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                >
+                    <i data-lucide="menu" class="icon"></i>
+                </button>
 
-            <div class="nav__actions-mobile">
-              <button class="icon-btn-labeled lang-toggle-mobile" type="button">
-                <i data-lucide="globe" class="icon"></i>
-                <span data-i18n="nav.language">Language</span>
-              </button>
-              <a class="icon-btn-labeled" href="https://clair-ui.vercel.app/">
-                <i data-lucide="circle-user" class="icon"></i>
-                <span data-i18n="nav.account">Account</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
+                <div class="nav__menu" id="navMenu">
+                    <div class="nav__menu-inner">
+                        <ul class="nav__links-mobile" role="list">
+                            <li><a href="about.html" class="menu-link" data-i18n="page.about">Nosotros</a></li>
+                            <li><a href="product.html" class="menu-link" data-i18n="page.product" aria-current="page">Producto</a></li>
+                            <li><a href="pricing.html" class="menu-link" data-i18n="page.pricing">Precios</a></li>
+                        </ul>
 
-    <main>
-      <!-- PRODUCT HERO -->
-      <section class="hero__product" id="product">
-        <div class="hero__content container">
-          <h1 class="kicker" data-i18n="product.hero_title">Meet Clair Alpha</h1>
-          <img
-            src="assets/sensor.svg"
-            data-i18n-alt="product.sensor_alt"
-            alt="Clair Alpha Sensor"
-            class="hero__image"
-          />
-        </div>
-      </section>
+                        <div class="nav__actions-mobile">
+                            <button class="icon-btn-labeled lang-toggle-mobile" type="button">
+                                <i data-lucide="globe" class="icon"></i>
+                                <span data-i18n="nav.language">Idioma</span>
+                            </button>
+                            <a class="icon-btn-labeled" href="https://clair-ui.vercel.app/">
+                                <i data-lucide="circle-user" class="icon"></i>
+                                <span data-i18n="nav.account">Cuenta</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
 
-      <!-- AIR INDEX QUALITY -->
-      <section class="section section--dark" id="about">
-        <div class="container">
-            <div class="container">
-                <header class="split__header">
-                    <h2 data-i18n="product.aiq_title">Air Index Quality</h2>
-                    <p data-i18n="product.aiq_desc">
-                        Clair Alpha continuously maps the invisible elements of your environment, it synthesizes a comprehensive Air Quality Index.
-                    </p>
-                </header>
-            </div>
-            <div class="split-media" aria-hidden="true">
-                <img src="assets/gym.png" alt="Clair Banner" style="width:100%;height:100%;object-fit:cover;" />
-            </div>
+        <main>
+            <section class="hero" id="product">
+                <div class="hero__content container">
+                    <p class="eyebrow">Clair Niño</p>
+                    <h1 class="hero__title" data-i18n="product.hero_title">La estación que escucha la casa durante El Niño</h1>
+                    <p class="hero__lead" data-i18n="product.hero_lead">Mide el calor, la humedad, el CO₂ y las partículas dentro de la vivienda. Con eso calcula el riesgo de hoy y escribe una alerta en español simple, citando a MINSA y SENAMHI.</p>
+                    <div class="hero__cta">
+                        <a class="btn btn--primary" href="pricing.html" data-i18n="product.cta_order">Ver precios</a>
+                        <a class="btn btn--outline" href="#specs" data-i18n="product.specs_cta">Qué mide</a>
+                    </div>
+                </div>
+            </section>
 
-            <div class="container">
-            <div class="specs" role="list" data-i18n-aria="product.specs_label" aria-label="Specifications">
-                <article class="spec" role="listitem">
-                    <header class="spec__section__header">
-                        <h3 data-i18n="product.specs_header">Clair Specs</h3>
+            <section class="section section--surface" aria-labelledby="risk-title">
+                <div class="container">
+                    <div class="split">
+                        <figure class="photo photo--tall">
+                            <img
+                                src="assets/nino/extra/pluviometro.jpg"
+                                width="1200"
+                                height="1600"
+                                loading="lazy"
+                                data-i18n-alt="product.gauge_alt"
+                                alt="Pluviómetro de pesaje instalado al aire libre"
+                            />
+                            <figcaption class="credit">
+                                <span data-i18n="product.gauge_credit">Pluviómetro Ott Pluvio2, Viikki · Antti Leppänen, CC BY 4.0</span>
+                                <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener license" data-i18n="about.credit_license">Licencia</a>
+                            </figcaption>
+                        </figure>
+                        <div class="split__body">
+                            <header class="section__header">
+                                <h2 id="risk-title" data-i18n="product.risk_title">La lluvia se mide afuera. El riesgo se decide adentro.</h2>
+                                <p data-i18n="product.risk_desc">Un pluviómetro cuenta lo que cae. Dentro de la casa, el calor y la humedad dicen si esa lluvia dejó agua quieta donde se cría el zancudo. Clair Niño junta las dos lecturas y las vuelve una frase para hoy.</p>
+                            </header>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="specs">
+                <div class="container">
+                    <header class="section__header">
+                        <h2 data-i18n="product.specs_header">Qué mide cuando El Niño aprieta</h2>
                     </header>
-                </article>
+                    <div class="specs specs--two" role="list" data-i18n-aria="product.specs_label" aria-label="Qué mide la estación">
+                        <article class="spec" role="listitem">
+                            <h3 class="spec__label" data-i18n="product.heat_label">Calor y humedad</h3>
+                            <p class="spec__desc" data-i18n="product.heat_desc">El SHT40 registra la temperatura y la humedad con las que se calcula el índice de calor y el rango favorable al zancudo.</p>
+                        </article>
+                        <article class="spec" role="listitem">
+                            <h3 class="spec__label" data-i18n="product.air_label">El aire de la vivienda</h3>
+                            <p class="spec__desc" data-i18n="product.air_desc">El SCD41 avisa cuándo ventilar por el CO₂. El sensor de partículas sigue el PM2.5 y el PM10 cuando el polvo y el humo se quedan adentro.</p>
+                        </article>
+                        <article class="spec" role="listitem">
+                            <h3 class="spec__label" data-i18n="product.water_label">Lluvia y nivel de agua</h3>
+                            <p class="spec__desc" data-i18n="product.water_desc">Un pluviómetro de balancín mide lo que cae. Un sensor de nivel anticipa el agua que sube: inundación o huaico, antes de que llegue a la puerta.</p>
+                        </article>
+                        <article class="spec" role="listitem">
+                            <h3 class="spec__label" data-i18n="product.link_label">La lectura sale de la casa</h3>
+                            <p class="spec__desc" data-i18n="product.link_desc">Un ESP32 procesa los sensores y los envía por Wi-Fi. La carcasa IP65 aguanta el exterior, con batería y panel solar si el barrio se queda sin red.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section--surface section--cta">
+                <div class="container cta">
+                    <figure class="photo cta__product">
+                        <img
+                            src="assets/sensor-last.avif"
+                            width="640"
+                            height="640"
+                            loading="lazy"
+                            data-i18n-alt="product.sensor_alt"
+                            alt="Estación Clair Niño"
+                        />
+                    </figure>
+                    <div class="cta__copy">
+                        <h2 data-i18n="product.station_title">De la lectura a una sola acción</h2>
+                        <p data-i18n="product.station_desc">La estación no pide que interpretes una gráfica. Entrega una línea: vacía el agua estancada, ventila, cuida a quien más sufre el calor, y sigue el aviso oficial.</p>
+                        <div class="cta__buttons">
+                            <a class="btn btn--primary" href="pricing.html" data-i18n="product.cta_order">Ver precios</a>
+                            <a class="btn btn--outline" href="index.html" data-i18n="product.cta_home">Volver al inicio</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="place-title">
+                <div class="container">
+                    <header class="section__header">
+                        <h2 id="place-title" data-i18n="product.place_title">Pensada para la costa que El Niño vuelve a visitar</h2>
+                        <p data-i18n="product.place_desc">Piura, Máncora y cualquier casa donde el verano deja de ser solo calor. Empieza con una estación. Con varias, un municipio ve primero dónde fumigar o a quién avisar.</p>
+                    </header>
+                    <figure class="photo">
+                        <img
+                            class="photo__crop"
+                            src="assets/nino/extra/babahoyo-nino.jpg"
+                            width="1830"
+                            height="1152"
+                            loading="lazy"
+                            data-i18n-alt="product.place_alt"
+                            alt="Casas de Babahoyo rodeadas de agua durante El Niño"
+                        />
+                        <figcaption class="credit">
+                            <span data-i18n="product.place_credit">Babahoyo, Ecuador, durante El Niño · Etinar, CC BY-SA 4.0</span>
+                            <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license" data-i18n="about.credit_license">Licencia</a>
+                        </figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section class="section" data-i18n-aria="product.video_label" aria-label="Video del producto">
+                <div class="container">
+                    <div class="video-frame">
+                        <iframe
+                            src="https://www.youtube.com/embed/SxHw18UQdo0?rel=0"
+                            title="Video del producto Clair"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container footer__inner">
+                <small>Clair Niño © 2026</small>
+                <ul class="footer__links" role="list" data-i18n-aria="footer.links_label" aria-label="Enlaces">
+                    <li><a href="about.html" data-i18n="page.about">Nosotros</a></li>
+                    <li><a href="product.html" data-i18n="page.product">Producto</a></li>
+                    <li><a href="pricing.html" data-i18n="page.pricing">Precios</a></li>
+                    <li><a href="privacy.html" data-i18n="page.privacy">Privacidad</a></li>
+                    <li><a href="contact.html" data-i18n="page.contact">Contacto</a></li>
+                </ul>
             </div>
-        </div>
-
-        <div class="container">
-          <div class="specs" role="list">
-            <article class="spec" role="listitem">
-              <div class="spec__label" data-i18n="product.core_label">Core Processing</div>
-              <div class="spec__desc" data-i18n="product.core_desc">Powered by an advanced ESP32 architecture. This serves as the central intelligence hub, instantly processing multi-sensor data and ensuring seamless Wi-Fi transmission to your network.</div>
-            </article>
-
-            <article class="spec" role="listitem">
-              <div class="spec__label" data-i18n="product.atm_label">Atmospheric Sensing</div>
-              <div class="spec__desc" data-i18n="product.atm_desc">Equipped with an SCD41 module for simultaneous, laboratory-grade monitoring. It tracks CO2 saturation, ambient temperature, and relative humidity with absolute precision.</div>
-            </article>
-
-            <article class="spec" role="listitem">
-              <div class="spec__label" data-i18n="product.laser_label">Laser Particle Detection</div>
-              <div class="spec__desc" data-i18n="product.laser_desc">Utilizes a high-precision PMS5003 laser sensor to continuously measure ultra-fine particulate matter, actively tracking both PM2.5 and PM10 pollutants down to the sub-micron level.</div>
-            </article>
-
-            <article class="spec" role="listitem">
-              <div class="spec__label" data-i18n="product.oled_label">Unobtrusive Interface</div>
-              <div class="spec__desc" data-i18n="product.oled_desc">Features a minimalist high-contrast OLED display. Designed for zero distraction, it provides immediate, app-free visibility of critical metrics without compromising the device's sharp, pure silhouette.</div>
-            </article>
-          </div>
-        </div>
-
-      </section>
-
-      <!-- CTA -->
-      <section class="section section--dark section--cta" id="pricing">
-        <div class="container cta">
-          <div class="cta__copy">
-            <h2 data-i18n="cta.title">Clean your air</h2>
-            <p data-i18n="cta.desc">
-              Take absolute control of your indoor environment. Precise, real-time tracking for CO2, particulate
-              matter, temperature, and humidity.
-            </p>
-            <div class="cta__buttons">
-              <a class="btn btn--outline" href="pricing.html" data-i18n="cta.order">Order Now</a>
-              <a class="btn btn--ghost" href="product.html" data-i18n="cta.view">View Product</a>
-            </div>
-          </div>
-
-          <div class="cta__product">
-            <img src="assets/sensor-last.avif" alt="Clair Alpha Sensor" class="cta__image" />
-          </div>
-        </div>
-      </section>
-
-      <!-- PRODUCT VIDEO -->
-      <section
-        class="section section--dark section--split"
-        aria-label="About the Product"
-      >
-        <div class="split-media">
-          <iframe
-            src="https://www.youtube.com/embed/SxHw18UQdo0?rel=0"
-            title="About the Product"
-            style="width:100%;height:100%;border:0;display:block;"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </section>
-
-    </main>
-
-    <footer class="footer">
-      <div class="container footer__inner">
-        <small>Clair © 2026</small>
-        <ul class="footer__links" role="list" data-i18n-aria="footer.links_label" aria-label="Links">
-          <li><a href="about.html" data-i18n="page.about">About</a></li>
-          <li><a href="product.html" data-i18n="page.product">Product</a></li>
-          <li><a href="pricing.html" data-i18n="page.pricing">Pricing</a></li>
-          <li><a href="privacy.html" data-i18n="page.privacy">Privacy</a></li>
-          <li><a href="contact.html" data-i18n="page.contact">Contact</a></li>
-        </ul>
-      </div>
-    </footer>
-    <script src="menu.js"></script>
-    <script src="i18n.js"></script>
-  </body>
+        </footer>
+        <script src="menu.js"></script>
+        <script src="i18n.js"></script>
+    </body>
 </html>

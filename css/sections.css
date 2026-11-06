@@ -121,6 +121,24 @@
     flex-wrap: wrap;
 }
 
+/* Clair Niño hero: eyebrow without underline and a one-line pitch */
+.subkicker--plain {
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.hero__lead {
+    max-width: 620px;
+    margin: 16px auto 24px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.6;
+    /* keeps the lead readable over the globe on small screens */
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.9);
+}
+
 .hero__image {
     margin-top: 34px;
     width: min(340px, 70vw);
@@ -342,6 +360,130 @@
     font-weight: 500;
 }
 
+/* Headings and paragraphs reuse the metric/spec text styles */
+h3.metric__label,
+h3.spec__label {
+    margin-top: 0;
+}
+
+p.metric__desc,
+p.spec__desc {
+    margin-top: 0;
+}
+
+.icon--lg {
+    width: 40px;
+    height: 40px;
+    stroke-width: 1.5px;
+}
+
+.source-note {
+    max-width: 640px;
+    margin: 64px auto 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.source-note a {
+    display: block;
+    margin-top: 6px;
+    color: var(--text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* How it works: numbered steps */
+.specs--steps {
+    list-style: none;
+    padding: 0;
+}
+
+.step__num {
+    font-family: var(--font-head);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #8d94ff;
+    margin-bottom: 12px;
+}
+
+.specs--three {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* AI alert example */
+.ai-alert {
+    max-width: 640px;
+    margin: 72px auto 0;
+    padding: 28px;
+    border: 1px solid rgba(0, 255, 149, 0.4);
+    border-radius: var(--radius);
+    background: rgba(0, 255, 149, 0.04);
+}
+
+.ai-alert__meta {
+    margin: 12px 0 16px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.ai-alert__text {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #fff;
+}
+
+/* Roadmap list */
+.roadmap__title {
+    margin: 0 0 12px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.roadmap {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 28px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.roadmap li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+}
+
+.roadmap li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #00ff95;
+}
+
+/* Disclaimer */
+.disclaimer {
+    background: #000;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 28px 0;
+    text-align: center;
+}
+
+.disclaimer p {
+    margin: 0;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 500;
+}
+
 /* Split section */
 .section--split {
     padding-bottom: 0;
@@ -497,4 +639,784 @@
 
 .footer__links a:hover {
     color: rgba(255, 255, 255, 0.85);
+}
+
+/* ==========================================================================
+   Clair Niño deck theme (index.html only: body.theme-deck)
+   Light, airy, hairlines, one accent. Mirrors pitch/_build/build-v2.js.
+   ========================================================================== */
+.theme-deck {
+    --bg: var(--mist);
+    --text: var(--navy);
+    --muted: var(--navy-muted);
+    --faint: var(--navy-muted);
+    --line: var(--hair);
+    --font-body: var(--font-text);
+    --font-head: var(--font-display);
+    --container: 1120px;
+    background: var(--mist);
+    color: var(--navy);
+    font-size: 17px;
+    line-height: 1.55;
+    text-rendering: optimizeLegibility;
+}
+
+.theme-deck h1,
+.theme-deck h2,
+.theme-deck h3 {
+    color: var(--navy);
+}
+
+.theme-deck :focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+.theme-deck .icon {
+    stroke: currentColor;
+}
+
+/* Letter-spaced caps label, as the deck labels */
+.theme-deck .label,
+.theme-deck .eyebrow {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--navy-muted);
+    margin: 0 0 14px;
+}
+
+.theme-deck .label--teal,
+.theme-deck .eyebrow {
+    color: var(--teal);
+}
+
+.theme-deck .label--accent {
+    color: var(--coral);
+}
+
+/* Image credit lines (always visible, as in the deck) */
+.theme-deck .credit {
+    display: block;
+    margin: 8px 0 0;
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--navy-muted);
+}
+
+.theme-deck .credit a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    margin-left: 4px;
+}
+
+/* Header */
+.theme-deck .header {
+    background: rgba(243, 246, 246, 0.94);
+    border-bottom: 1px solid var(--hair);
+}
+
+.theme-deck .nav {
+    padding: 18px 0;
+}
+
+/* clair.svg is white-on-transparent: paint it navy through a mask (img stays for its alt) */
+.theme-deck .brand {
+    display: block;
+}
+
+/* mask on a pseudo-element so the link's focus outline is not clipped */
+.theme-deck .brand::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--navy);
+    -webkit-mask: url("../assets/clair.svg") left center / contain no-repeat;
+    mask: url("../assets/clair.svg") left center / contain no-repeat;
+}
+
+.theme-deck .brand__logo {
+    opacity: 0;
+}
+
+.theme-deck .nav__links-desktop {
+    font-size: 15px;
+    font-weight: 500;
+    gap: 32px;
+}
+
+.theme-deck .nav__links-desktop a,
+.theme-deck .icon-btn,
+.theme-deck .menu-toggle {
+    color: var(--navy);
+}
+
+.theme-deck .nav__links-desktop a:hover {
+    color: var(--teal);
+}
+
+.theme-deck .nav__menu {
+    background: var(--mist);
+}
+
+.theme-deck .nav__links-mobile a {
+    color: var(--navy);
+}
+
+.theme-deck .nav__links-mobile a:hover {
+    color: var(--teal);
+}
+
+.theme-deck .icon-btn-labeled {
+    background: var(--surface);
+    border: 1px solid var(--hair);
+    color: var(--navy);
+}
+
+.theme-deck .icon-btn-labeled:hover {
+    border-color: var(--navy-muted);
+    background: var(--surface);
+}
+
+.theme-deck .lang-dropdown {
+    background: var(--surface);
+    border: 1px solid var(--hair);
+    box-shadow: 0 8px 24px rgba(14, 42, 59, 0.08);
+}
+
+.theme-deck .lang-option {
+    color: var(--navy-muted);
+}
+
+.theme-deck .lang-option:hover {
+    background: var(--mist);
+    color: var(--navy);
+}
+
+.theme-deck .lang-option--active {
+    color: var(--navy);
+}
+
+/* Buttons */
+.theme-deck .btn {
+    height: 46px;
+    min-width: 0;
+    padding: 0 26px;
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.theme-deck .btn--primary {
+    background: var(--navy);
+    color: var(--surface);
+    border-color: var(--navy);
+}
+
+.theme-deck .btn--primary:hover {
+    background: var(--teal);
+    border-color: var(--teal);
+}
+
+.theme-deck .btn--outline,
+.theme-deck .btn--ghost {
+    background: transparent;
+    color: var(--navy);
+    border: 1.5px solid var(--navy);
+}
+
+.theme-deck .btn--outline:hover,
+.theme-deck .btn--ghost:hover {
+    background: var(--surface);
+}
+
+/* Hero: full-bleed SST anomaly band, then left-aligned title (deck slide 1) */
+.theme-deck .hero {
+    min-height: 0;
+    padding-top: 64px;
+    background: var(--mist);
+    overflow: visible;
+}
+
+.theme-deck .hero__band {
+    margin: 0;
+}
+
+.theme-deck .hero__band img {
+    display: block;
+    width: 100%;
+    height: clamp(220px, 36vw, 480px);
+    object-fit: cover;
+    object-position: center 55%;
+}
+
+.theme-deck .hero__band .credit {
+    text-align: right;
+}
+
+.theme-deck .hero__content {
+    display: block;
+    place-items: normal;
+    text-align: left;
+    padding: 56px 0 112px;
+}
+
+.theme-deck .hero__title {
+    margin: 0;
+    max-width: 16ch;
+    font-family: var(--font-display);
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 600;
+    line-height: 1.04;
+    letter-spacing: -0.01em;
+}
+
+.theme-deck .hero__lead {
+    max-width: 640px;
+    margin: 24px 0 36px;
+    color: var(--navy-muted);
+    font-size: clamp(17px, 1.6vw, 20px);
+    line-height: 1.55;
+    text-shadow: none;
+}
+
+.theme-deck .hero__cta {
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+/* Sections: mist / white surfaces separated by hairlines */
+.theme-deck .section {
+    padding: 112px 0;
+    background: var(--mist);
+    border-top: 1px solid var(--hair);
+}
+
+.theme-deck .section--surface {
+    background: var(--surface);
+}
+
+.theme-deck .section__header {
+    text-align: left;
+    max-width: 680px;
+    margin: 0 0 56px;
+}
+
+.theme-deck .section__header h2,
+.theme-deck .cta__copy h2 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4.4vw, 48px);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.005em;
+    margin: 0 0 20px;
+}
+
+.theme-deck .section__header p,
+.theme-deck .cta__copy p {
+    color: var(--navy-muted);
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Photo + copy split (problem, municipalities) */
+.theme-deck .split {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: 64px;
+    align-items: center;
+}
+
+.theme-deck .photo {
+    margin: 0;
+}
+
+.theme-deck .photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 2px;
+    background: var(--track);
+}
+
+.theme-deck .photo--tall img {
+    aspect-ratio: 4 / 5;
+}
+
+.theme-deck .split__body .section__header {
+    margin-bottom: 40px;
+}
+
+/* Verified CDC Perú figure: risk = coral rule */
+.theme-deck .source-note {
+    max-width: 560px;
+    margin: 0;
+    padding-left: 20px;
+    border-left: 3px solid var(--coral);
+    text-align: left;
+    color: var(--navy);
+    font-size: 18px;
+    line-height: 1.55;
+}
+
+.theme-deck .source-note a {
+    margin-top: 10px;
+    color: var(--navy-muted);
+    font-size: 13px;
+}
+
+.theme-deck .source-note a:hover {
+    color: var(--teal);
+}
+
+/* Risks row */
+.theme-deck .metrics {
+    gap: 48px;
+    margin-top: 88px;
+}
+
+.theme-deck .metric {
+    text-align: left;
+    align-items: flex-start;
+    padding-top: 28px;
+    border-top: 1px solid var(--hair);
+}
+
+.theme-deck .metric__dial {
+    width: auto;
+    height: auto;
+    margin: 0 0 18px;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: none;
+    color: var(--teal);
+}
+
+.theme-deck .metric__label,
+.theme-deck .spec__label {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+
+.theme-deck .metric__desc,
+.theme-deck .spec__desc {
+    max-width: none;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--navy-muted);
+    margin-bottom: 18px;
+}
+
+.theme-deck .metric__tag {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    color: var(--teal);
+}
+
+.theme-deck .icon--lg {
+    width: 32px;
+    height: 32px;
+    stroke-width: 1.6px;
+}
+
+/* Steps / AI functions / kit: hairline-topped columns */
+.theme-deck .specs {
+    gap: 40px 48px;
+    margin-top: 0;
+}
+
+.theme-deck .spec {
+    text-align: left;
+    align-items: flex-start;
+    padding-top: 24px;
+    border-top: 1px solid var(--hair);
+}
+
+.theme-deck .step__num {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1;
+    color: var(--teal);
+    margin-bottom: 18px;
+}
+
+.theme-deck .specs--kit .spec__label {
+    font-size: 20px;
+}
+
+/* AI demo (deck slide 5): simulated card + real DeepSeek answer */
+.theme-deck .ai-alert {
+    display: grid;
+    grid-template-columns: minmax(260px, 4fr) 7fr;
+    gap: 64px;
+    align-items: start;
+    max-width: none;
+    margin: 96px 0 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+}
+
+.theme-deck .ai-alert__scenario {
+    padding: 32px 28px;
+    background: var(--surface);
+    border: 1px solid var(--hair);
+    border-radius: 20px;
+}
+
+.theme-deck .ai-alert__risk {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin: 6px 0 14px;
+}
+
+.theme-deck .ai-alert__level {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--coral);
+}
+
+.theme-deck .ai-alert__score {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--navy);
+}
+
+.theme-deck .meter {
+    height: 10px;
+    border-radius: 5px;
+    background: var(--track);
+    overflow: hidden;
+}
+
+.theme-deck .meter__fill {
+    display: block;
+    height: 100%;
+    border-radius: 5px;
+    background: var(--coral);
+}
+
+.theme-deck .ai-alert__meta {
+    margin: 20px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid var(--hair);
+    color: var(--navy);
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.theme-deck .ai-alert__response {
+    padding-top: 8px;
+}
+
+.theme-deck .ai-alert__text {
+    margin: 0;
+    font-size: clamp(20px, 2.1vw, 26px);
+    line-height: 1.45;
+    color: var(--navy);
+}
+
+/* Municipalities + roadmap (deck slide 7) */
+.theme-deck .section--cta {
+    padding: 112px 0;
+}
+
+.theme-deck .cta {
+    grid-template-columns: 5fr 7fr;
+    gap: 64px;
+    align-items: center;
+}
+
+.theme-deck .cta__product {
+    display: block;
+}
+
+.theme-deck .roadmap__title {
+    margin: 32px 0 18px;
+}
+
+.theme-deck .roadmap {
+    position: relative;
+    margin: 0 0 36px;
+    color: var(--navy);
+    font-size: 17px;
+}
+
+.theme-deck .roadmap::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 12px;
+    bottom: 12px;
+    width: 1px;
+    background: var(--hair);
+}
+
+.theme-deck .roadmap li {
+    padding-left: 34px;
+    margin-bottom: 16px;
+}
+
+.theme-deck .roadmap li::before {
+    left: 0;
+    top: 0.3em;
+    width: 15px;
+    height: 15px;
+    box-sizing: border-box;
+    border: 2px solid var(--teal);
+    background: var(--mist);
+}
+
+.theme-deck .roadmap li:first-child::before {
+    background: var(--teal);
+}
+
+.theme-deck .cta__buttons {
+    gap: 12px;
+}
+
+/* Disclaimer band over the Máncora photo (deck slide 8) */
+.theme-deck .disclaimer {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: clamp(340px, 46vw, 560px);
+    padding: 56px 0;
+    background: var(--track);
+    border-top: 0;
+    overflow: hidden;
+    text-align: left;
+}
+
+.theme-deck .disclaimer__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 70%;
+}
+
+.theme-deck .disclaimer__inner {
+    position: relative;
+}
+
+/* solid plate keeps the text legible on the photo */
+.theme-deck .disclaimer__plate {
+    display: inline-block;
+    max-width: 680px;
+    margin: 0;
+    padding: 18px 24px;
+    background: var(--surface);
+    border-radius: 8px;
+    color: var(--navy);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.theme-deck .credit--plate {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 1;
+    margin: 0;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 4px;
+    color: var(--navy);
+}
+
+/* Footer */
+.theme-deck .footer {
+    background: var(--surface);
+    border-top: 1px solid var(--hair);
+    padding: 32px 0 40px;
+    color: var(--navy-muted);
+    font-size: 14px;
+}
+
+.theme-deck .footer__links {
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.theme-deck .footer__links a {
+    color: var(--navy);
+}
+
+.theme-deck .footer__links a:hover {
+    color: var(--teal);
+}
+
+.theme-deck .footer__credits {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--hair);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.theme-deck .footer__credits-title {
+    margin: 0 0 6px;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+.theme-deck .footer__credits ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.theme-deck .footer__credits li {
+    margin-bottom: 4px;
+}
+
+.theme-deck .footer__credits a {
+    color: var(--navy-muted);
+    text-decoration: underline;
+    text-decoration-color: var(--hair);
+    text-underline-offset: 2px;
+}
+
+.theme-deck .footer__credits a:hover {
+    color: var(--teal);
+    text-decoration-color: currentColor;
+}
+
+/* Inner pages: Nosotros, Producto, Precios */
+.theme-deck .nav__links-desktop a[aria-current="page"] {
+    color: var(--teal);
+    box-shadow: inset 0 -1px 0 var(--coral);
+}
+
+.theme-deck .nav__links-mobile a[aria-current="page"] {
+    color: var(--coral);
+}
+
+.theme-deck .specs--two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.theme-deck .team-photo {
+    margin-top: 72px;
+}
+
+.theme-deck .photo__crop {
+    width: 100%;
+    height: min(560px, 70vw);
+    object-fit: cover;
+    object-position: left center;
+}
+
+.theme-deck .video-frame {
+    position: relative;
+    width: min(960px, 100%);
+    aspect-ratio: 16 / 9;
+    background: var(--navy);
+    overflow: hidden;
+}
+
+.theme-deck .video-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.theme-deck .pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 420px));
+    gap: 64px;
+    justify-content: start;
+}
+
+.theme-deck .pricing-card {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    border-top: 1px solid var(--hair);
+    box-shadow: none;
+    padding: 28px 0 0;
+    max-width: none;
+    text-align: left;
+}
+
+.theme-deck .pricing-card__title {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 16px;
+}
+
+.theme-deck .pricing-card--mesh .pricing-card__title {
+    color: var(--coral);
+}
+
+.theme-deck .pricing-card__price {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 5vw, 56px);
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+}
+
+.theme-deck .pricing-card__period {
+    color: var(--coral);
+    letter-spacing: 0.16em;
+    margin-bottom: 28px;
+}
+
+.theme-deck .pricing-card__desc {
+    color: var(--navy);
+    font-size: 17px;
+}
+
+.theme-deck .pricing-card__divider {
+    background: var(--hair);
+}
+
+.theme-deck .pricing-card__features {
+    color: var(--navy-muted);
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+.theme-deck .pricing-card__features li::before {
+    color: var(--teal);
+}
+
+.theme-deck .pricing-card--mesh .pricing-card__features li::before {
+    color: var(--coral);
+}
+
+#specs,
+#subscriptions {
+    scroll-margin-top: 88px;
 }

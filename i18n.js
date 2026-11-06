@@ -1,6 +1,6 @@
 (function () {
     var T = {};
-    var currentLang = localStorage.getItem("clair_lang") || "en";
+    var currentLang = localStorage.getItem("clair_lang") || "es";
 
     function t(key) {
         var parts = key.split(".");

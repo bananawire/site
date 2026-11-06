@@ -1,164 +1,213 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clair</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
-    <script src="https://unpkg.com/lucide@latest"></script>
-  </head>
-  <body>
-    <header class="header">
-      <nav class="nav container" data-i18n-aria="nav.aria_nav" aria-label="Main">
-        <a class="brand" href="index.html">
-          <img src="assets/clair.svg" alt="Clair Logo" class="brand__logo" />
-          <span class="sr-only">Clair</span>
-        </a>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Nosotros · Clair Niño</title>
+        <meta name="theme-color" content="#F3F6F6" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+        <script src="https://unpkg.com/lucide@latest"></script>
+    </head>
 
-        <!-- Desktop Navigation -->
-        <ul class="nav__links-desktop" role="list">
-          <li><a href="about.html" data-i18n="page.about">About</a></li>
-          <li><a href="product.html" data-i18n="page.product">Product</a></li>
-          <li><a href="pricing.html" data-i18n="page.pricing">Pricing</a></li>
-        </ul>
+    <body class="theme-deck">
+        <header class="header">
+            <nav class="nav container" data-i18n-aria="nav.aria_nav" aria-label="Principal">
+                <a class="brand" href="index.html">
+                    <img src="assets/clair.svg" alt="Clair Niño" class="brand__logo" />
+                </a>
 
-        <div class="nav__actions-desktop">
-          <button
-            class="icon-btn lang-toggle-desktop"
-            type="button"
-            data-i18n-aria="nav.aria_lang"
-            aria-label="Select language"
-            aria-expanded="false"
-            aria-haspopup="true"
-          >
-            <i data-lucide="globe" class="icon"></i>
-          </button>
-<a
-              class="icon-btn"
-              type="button"
-              data-i18n-aria="nav.aria_account"
-              aria-label="Account"
-              href="https://clair-ui.vercel.app/"
-            >
-              <i data-lucide="circle-user" class="icon"></i>
-            </a>
-        </div>
+                <ul class="nav__links-desktop" role="list">
+                    <li><a href="about.html" data-i18n="page.about" aria-current="page">Nosotros</a></li>
+                    <li><a href="product.html" data-i18n="page.product">Producto</a></li>
+                    <li><a href="pricing.html" data-i18n="page.pricing">Precios</a></li>
+                </ul>
 
-        <!-- Mobile Menu Toggle -->
-        <button
-          class="menu-toggle"
-          id="menuToggle"
-          data-i18n-aria="nav.open_menu"
-          aria-label="Open menu"
-          aria-expanded="false"
-        >
-          <i data-lucide="menu" class="icon"></i>
-        </button>
+                <div class="nav__actions-desktop">
+                    <button
+                        class="icon-btn lang-toggle-desktop"
+                        type="button"
+                        data-i18n-aria="nav.aria_lang"
+                        aria-label="Seleccionar idioma"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                    >
+                        <i data-lucide="globe" class="icon"></i>
+                    </button>
+                    <a
+                        class="icon-btn"
+                        data-i18n-aria="nav.aria_account"
+                        aria-label="Cuenta"
+                        href="https://clair-ui.vercel.app/"
+                    >
+                        <i data-lucide="circle-user" class="icon"></i>
+                    </a>
+                </div>
 
-        <!-- Mobile Menu Overlay -->
-        <div class="nav__menu" id="navMenu">
-          <div class="nav__menu-inner">
-            <ul class="nav__links-mobile" role="list">
-              <li><a href="about.html" class="menu-link" data-i18n="page.about">About</a></li>
-              <li><a href="product.html" class="menu-link" data-i18n="page.product">Product</a></li>
-              <li><a href="pricing.html" class="menu-link" data-i18n="page.pricing">Pricing</a></li>
-            </ul>
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    data-i18n-aria="nav.open_menu"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                >
+                    <i data-lucide="menu" class="icon"></i>
+                </button>
 
-            <div class="nav__actions-mobile">
-              <button class="icon-btn-labeled lang-toggle-mobile" type="button">
-                <i data-lucide="globe" class="icon"></i>
-                <span data-i18n="nav.language">Language</span>
-              </button>
-              <a class="icon-btn-labeled" href="https://clair-ui.vercel.app/">
-                <i data-lucide="circle-user" class="icon"></i>
-                <span data-i18n="nav.account">Account</span>
-              </a>
+                <div class="nav__menu" id="navMenu">
+                    <div class="nav__menu-inner">
+                        <ul class="nav__links-mobile" role="list">
+                            <li><a href="about.html" class="menu-link" data-i18n="page.about" aria-current="page">Nosotros</a></li>
+                            <li><a href="product.html" class="menu-link" data-i18n="page.product">Producto</a></li>
+                            <li><a href="pricing.html" class="menu-link" data-i18n="page.pricing">Precios</a></li>
+                        </ul>
+
+                        <div class="nav__actions-mobile">
+                            <button class="icon-btn-labeled lang-toggle-mobile" type="button">
+                                <i data-lucide="globe" class="icon"></i>
+                                <span data-i18n="nav.language">Idioma</span>
+                            </button>
+                            <a class="icon-btn-labeled" href="https://clair-ui.vercel.app/">
+                                <i data-lucide="circle-user" class="icon"></i>
+                                <span data-i18n="nav.account">Cuenta</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <figure class="hero__band">
+                    <img
+                        src="assets/nino/extra/yaku-cuarto.jpg"
+                        width="1000"
+                        height="667"
+                        fetchpriority="high"
+                        data-i18n-alt="about.hero_img_alt"
+                        alt="Dormitorio de una casa en Chaclacayo cubierto de lodo tras el ciclón Yaku, marzo de 2023"
+                    />
+                    <figcaption class="credit container" data-i18n="about.hero_credit">Dormitorio en Chaclacayo tras el ciclón Yaku, marzo 2023 · MapacheVioleta, CC0</figcaption>
+                </figure>
+                <div class="hero__content container">
+                    <p class="eyebrow">Clair Niño</p>
+                    <h1 class="hero__title" data-i18n="about.hero_title">El Niño llega a la casa. Nosotros también.</h1>
+                    <p class="hero__lead" data-i18n="about.hero_subtitle">Somos Mateo Aleman Romano, Victor Nicolas Ortiz, Ian Macavilca y Neil Andrew Quripaco. Clair Niño existe para que una familia de la costa sepa, hoy, si el calor y la humedad de su vivienda favorecen al zancudo o al golpe de calor.</p>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="why-title">
+                <div class="container">
+                    <div class="split">
+                        <figure class="photo">
+                            <img
+                                src="assets/nino/extra/yaku-casa.jpg"
+                                width="1000"
+                                height="667"
+                                loading="lazy"
+                                data-i18n-alt="about.why_img_alt"
+                                alt="Interior de una vivienda en Chaclacayo con lodo después del ciclón Yaku"
+                            />
+                            <figcaption class="credit" data-i18n="about.why_credit">Vivienda en Chaclacayo, marzo 2023 · MapacheVioleta, CC0</figcaption>
+                        </figure>
+                        <div class="split__body">
+                            <header class="section__header">
+                                <h2 id="why-title" data-i18n="about.why_title">El Pacífico se calienta. El aviso se queda en el boletín.</h2>
+                                <p data-i18n="about.why_desc">Cuando El Niño calienta el mar frente al Perú, la costa norte recibe lluvias más fuertes, noches que no refrescan y agua quieta en patios y baldes. SENAMHI, INDECI y MINSA publican la alerta. En la cocina de Piura esa alerta todavía no dice qué hacer esta tarde.</p>
+                            </header>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section--surface" aria-labelledby="memory-title">
+                <div class="container">
+                    <header class="section__header">
+                        <h2 id="memory-title" data-i18n="about.memory_title">Lo vimos en el río, no en una diapositiva.</h2>
+                        <p data-i18n="about.memory_desc">El Niño costero de 2017 creció el río Piura hasta la ciudad. En 2023, con otro Niño costero y el ciclón Yaku, el dengue volvió a llenar las semanas epidemiológicas. Clair Niño nace de esa memoria: el fenómeno no termina en el mar, termina en la casa.</p>
+                    </header>
+                    <p class="source-note">
+                        <span data-i18n="index.problem_stat">En 2023, con el Niño costero y el ciclón Yaku, el CDC Perú alertó de una epidemia de dengue: 72 163 casos y 79 fallecidos notificados solo hasta la semana epidemiológica 18.</span>
+                        <a
+                            href="https://www.dge.gob.pe/portalnuevo/informacion-publica/prensa/cdc-peru-emite-alerta-epidemiologica-por-epidemia-de-dengue-en-el-pais/"
+                            target="_blank"
+                            rel="noopener"
+                            data-i18n="index.problem_stat_source"
+                        >Fuente: CDC Perú (MINSA), 13 de mayo de 2023</a>
+                    </p>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="team-title">
+                <div class="container">
+                    <header class="section__header">
+                        <h2 id="team-title" data-i18n="about.team_title">Quién sostiene Clair Niño</h2>
+                        <p data-i18n="about.team_desc">Cuatro personas, cuatro piezas. Ninguna funciona sola: la lectura, la pantalla, la frase de emergencia y la historia que se cuenta afuera.</p>
+                    </header>
+                    <div class="specs specs--two" role="list">
+                        <article class="spec" role="listitem">
+                            <h3 class="spec__label" data-i18n="about.mateo_name">Mateo Aleman Romano</h3>
+                            <p class="spec__desc" data-i18n="about.mateo_role">La pantalla Modo Niño. Hace visible el riesgo del día para que la familia no tenga que leer un tablero.</p>
+                        </article>
+                        <article class="spec" role="listitem">
+                            <h3 class="spec__label" data-i18n="about.nicolas_name">Victor Nicolas Ortiz</h3>
+                            <p class="spec__desc" data-i18n="about.nicolas_role">La alerta. Convierte humedad y calor en una frase corta, y deja un texto de respaldo si la IA no responde.</p>
+                        </article>
+                        <article class="spec" role="listitem">
+                            <h3 class="spec__label" data-i18n="about.ian_name">Ian Macavilca</h3>
+                            <p class="spec__desc" data-i18n="about.ian_role">El asistente de emergencia. Responde con las guías de MINSA e INDECI, cita la fuente y, si no está ahí, lo dice.</p>
+                        </article>
+                        <article class="spec" role="listitem">
+                            <h3 class="spec__label" data-i18n="about.neil_name">Neil Andrew Quripaco</h3>
+                            <p class="spec__desc" data-i18n="about.neil_role">La historia. Landing, pitch y video para que El Niño se entienda antes de abrir la aplicación.</p>
+                        </article>
+                    </div>
+                    <figure class="photo team-photo">
+                        <img
+                            src="assets/team.jpg"
+                            width="1280"
+                            height="720"
+                            data-i18n-alt="about.team_alt"
+                            alt="Mateo Aleman Romano, Victor Nicolas Ortiz, Ian Macavilca y Neil Andrew Quripaco"
+                        />
+                    </figure>
+                </div>
+            </section>
+
+            <section class="section" data-i18n-aria="about.video_label" aria-label="Video del equipo">
+                <div class="container">
+                    <div class="video-frame">
+                        <iframe
+                            src="https://www.youtube.com/embed/s_UpAvIGI-o?rel=0"
+                            title="Video del equipo Clair"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container footer__inner">
+                <small>Clair Niño © 2026</small>
+                <ul class="footer__links" role="list" data-i18n-aria="footer.links_label" aria-label="Enlaces">
+                    <li><a href="about.html" data-i18n="page.about">Nosotros</a></li>
+                    <li><a href="product.html" data-i18n="page.product">Producto</a></li>
+                    <li><a href="pricing.html" data-i18n="page.pricing">Precios</a></li>
+                    <li><a href="privacy.html" data-i18n="page.privacy">Privacidad</a></li>
+                    <li><a href="contact.html" data-i18n="page.contact">Contacto</a></li>
+                </ul>
             </div>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <!-- ABOUT HERO -->
-      <section class="hero__about" id="product">
-        <div class="hero__bg" aria-hidden="true">
-          <div class="about-placeholder"></div>
-        </div>
-
-        <div class="hero__content container">
-          <h1 class="kicker" data-i18n="about.hero_title">About Us</h1>
-          <p data-i18n="about.hero_subtitle">Making invisible data visible</p>
-        </div>
-      </section>
-
-      <!-- VISION -->
-      <section class="hero__about_vision" id="product">
-        <div class="hero__bg" aria-hidden="true">
-          <div class="vision-placeholder"></div>
-        </div>
-
-        <div class="hero__content container">
-          <h2 class="kicker__about" data-i18n="about.vision_title">The Vision Behind Clair</h2>
-          <p class="subkicker__about" data-i18n="about.vision_desc">Clair was built from a desire to make invisible environmental data visible, actionable, and completely integrated into modern life.</p>
-        </div>
-      </section>
-
-      <!-- CLAIR TEAM -->
-      <section class="section section--dark" id="about">
-        <div class="container">
-          <div class="container">
-            <header class="split__header">
-              <h2 data-i18n="about.team_title">The Clair Team</h2>
-              <p data-i18n="about.team_desc">
-                A multidisciplinary group of developers and designers bridging the gap between robust IoT engineering and pure, minimalist design.
-              </p>
-            </header>
-          </div>
-          <div class="split-media" aria-hidden="true">
-            <img src="assets/team.png" alt="Clair Team" style="width:100%;height:100%;object-fit:cover;" />
-          </div>
-        </div>
-      </section>
-
-      <!-- TEAM VIDEO -->
-      <section
-        class="section section--dark section--split"
-        data-i18n-aria="about.invisible_label"
-        aria-label="Invisible Protection"
-      >
-        <div class="split-media">
-          <iframe
-            src="https://www.youtube.com/embed/s_UpAvIGI-o?rel=0"
-            title="Clair Team Video"
-            style="width:100%;height:100%;border:0;display:block;"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="container footer__inner">
-        <small>Clair © 2026</small>
-        <ul class="footer__links" role="list" data-i18n-aria="footer.links_label" aria-label="Links">
-          <li><a href="about.html" data-i18n="page.about">About</a></li>
-          <li><a href="product.html" data-i18n="page.product">Product</a></li>
-          <li><a href="pricing.html" data-i18n="page.pricing">Pricing</a></li>
-          <li><a href="privacy.html" data-i18n="page.privacy">Privacy</a></li>
-          <li><a href="contact.html" data-i18n="page.contact">Contact</a></li>
-        </ul>
-      </div>
-    </footer>
-    <script src="menu.js"></script>
-    <script src="i18n.js"></script>
-  </body>
+        </footer>
+        <script src="menu.js"></script>
+        <script src="i18n.js"></script>
+    </body>
 </html>
