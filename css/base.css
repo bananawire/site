@@ -1,3 +1,19 @@
+/* Clair Niño deck palette (pitch/_build/build-v2.js). Applied on pages with body.theme-deck */
+:root {
+    --mist: #f3f6f6; /* background: sea mist */
+    --surface: #ffffff; /* surfaces */
+    --navy: #0e2a3b; /* text: deep Pacific, 13.7:1 */
+    --navy-muted: #4e6470; /* secondary text, 5.7:1 */
+    --coral: #b93e14; /* single accent: warm anomaly / risk, 5.1:1 */
+    --teal: #1d6a72; /* secondary: sea water, 5.8:1 */
+    --hair: #c9d5d8; /* hairlines (never text) */
+    --track: #e4ecee; /* meter track */
+    --font-display:
+        "Barlow", Bahnschrift, "Segoe UI", system-ui, sans-serif;
+    --font-text:
+        "Source Sans 3", "Segoe UI", Bahnschrift, system-ui, sans-serif;
+}
+
 body {
     font-family: var(--font-body);
     color: var(--text);

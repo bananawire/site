@@ -1,37 +1,43 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Clair</title>
+        <title>Clair Niño · Alerta temprana para El Niño en tu casa</title>
+        <meta
+            name="description"
+            content="Clair Niño es una estación vecinal de bajo costo que mide calor, humedad y aire dentro de la casa y, con IA, le dice a cada familia su riesgo de hoy (dengue, golpe de calor, humedad) y qué hacer, citando fuentes oficiales."
+        />
+        <meta name="theme-color" content="#F3F6F6" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!-- Deck pairing: Barlow ~ Bahnschrift (DIN) for titles/numbers, Source Sans 3 ~ Segoe UI for body -->
         <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap"
             rel="stylesheet"
         />
         <link rel="stylesheet" href="styles.css" />
         <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+        <link rel="preload" as="image" href="assets/nino/sst-anomalia-2026.jpg" />
         <script src="https://unpkg.com/lucide@latest"></script>
     </head>
 
-    <body>
+    <body class="theme-deck">
         <header class="header">
-            <nav class="nav container" data-i18n-aria="nav.aria_nav" aria-label="Main">
+            <nav class="nav container" data-i18n-aria="nav.aria_nav" aria-label="Principal">
                 <a class="brand" href="index.html">
                     <img
                         src="assets/clair.svg"
-                        alt="Clair Logo"
+                        alt="Clair Niño"
                         class="brand__logo"
                     />
-                    <span class="sr-only">Clair</span>
                 </a>
 
                 <!-- Desktop Navigation -->
                 <ul class="nav__links-desktop" role="list">
-                    <li><a href="about.html" data-i18n="page.about">About</a></li>
-                    <li><a href="product.html" data-i18n="page.product">Product</a></li>
-                    <li><a href="pricing.html" data-i18n="page.pricing">Pricing</a></li>
+                    <li><a href="about.html" data-i18n="page.about">Nosotros</a></li>
+                    <li><a href="product.html" data-i18n="page.product">Producto</a></li>
+                    <li><a href="pricing.html" data-i18n="page.pricing">Precios</a></li>
                 </ul>
 
                 <div class="nav__actions-desktop">
@@ -39,7 +45,7 @@
                         class="icon-btn lang-toggle-desktop"
                         type="button"
                         data-i18n-aria="nav.aria_lang"
-                        aria-label="Select language"
+                        aria-label="Seleccionar idioma"
                         aria-expanded="false"
                         aria-haspopup="true"
                     >
@@ -47,9 +53,8 @@
                     </button>
                     <a
                         class="icon-btn"
-                        type="button"
                         data-i18n-aria="nav.aria_account"
-                        aria-label="Account"
+                        aria-label="Cuenta"
                         href="https://clair-ui.vercel.app/"
                     >
                         <i data-lucide="circle-user" class="icon"></i>
@@ -61,7 +66,7 @@
                     class="menu-toggle"
                     id="menuToggle"
                     data-i18n-aria="nav.open_menu"
-                    aria-label="Open menu"
+                    aria-label="Abrir menú"
                     aria-expanded="false"
                 >
                     <i data-lucide="menu" class="icon"></i>
@@ -72,24 +77,24 @@
                     <div class="nav__menu-inner">
                         <ul class="nav__links-mobile" role="list">
                             <li>
-                                <a href="about.html" class="menu-link" data-i18n="page.about">About</a>
+                                <a href="about.html" class="menu-link" data-i18n="page.about">Nosotros</a>
                             </li>
                             <li>
-                                <a href="product.html" class="menu-link" data-i18n="page.product">Product</a>
+                                <a href="product.html" class="menu-link" data-i18n="page.product">Producto</a>
                             </li>
                             <li>
-                                <a href="pricing.html" class="menu-link" data-i18n="page.pricing">Pricing</a>
+                                <a href="pricing.html" class="menu-link" data-i18n="page.pricing">Precios</a>
                             </li>
                         </ul>
 
                         <div class="nav__actions-mobile">
                             <button class="icon-btn-labeled lang-toggle-mobile" type="button">
                                 <i data-lucide="globe" class="icon"></i>
-                                <span data-i18n="nav.language">Language</span>
+                                <span data-i18n="nav.language">Idioma</span>
                             </button>
                             <a class="icon-btn-labeled" href="https://clair-ui.vercel.app/">
                                 <i data-lucide="circle-user" class="icon"></i>
-                                <span data-i18n="nav.account">Account</span>
+                                <span data-i18n="nav.account">Cuenta</span>
                             </a>
                         </div>
                     </div>
@@ -98,158 +103,362 @@
         </header>
 
         <main>
-            <!-- HERO -->
-            <section class="hero" id="product">
-                <div class="hero__bg" aria-hidden="true">
-                    <div class="hero__bg-inner">
-                        <div class="globe-placeholder"></div>
-                    </div>
-                </div>
+            <!-- HERO: NASA SST anomaly band (deck slide 1) -->
+            <section class="hero" id="inicio">
+                <figure class="hero__band">
+                    <img
+                        src="assets/nino/sst-anomalia-2026.jpg"
+                        width="1600"
+                        height="518"
+                        fetchpriority="high"
+                        data-i18n-alt="index.img_sst_alt"
+                        alt="Mapa de la NASA con la anomalía de temperatura del mar en el Pacífico tropical: una franja cálida rojo oscuro frente a Sudamérica"
+                    />
+                    <figcaption class="credit container" data-i18n="index.credit_sst">Anomalía de temperatura del mar, Pacífico tropical, 27 oct 2026 · NASA SVS, dominio público</figcaption>
+                </figure>
 
                 <div class="hero__content container">
-                    <h1 class="kicker">Clair Alpha</h1>
-                    <p class="subkicker" data-i18n="index.hero_price">From S/ 259.90</p>
+                    <p class="eyebrow">Clair Niño</p>
+                    <h1 class="hero__title" data-i18n="index.hero_title">Tu casa te avisa antes que El Niño</h1>
+                    <p class="hero__lead" data-i18n="index.hero_lead">
+                        Una estación vecinal de bajo costo que mide calor,
+                        humedad y aire dentro de tu casa y, con IA, te dice tu
+                        riesgo de hoy (dengue, golpe de calor, humedad) y qué
+                        hacer, citando fuentes oficiales.
+                    </p>
 
                     <div class="hero__cta">
-                        <a class="btn btn--primary" href="pricing.html" data-i18n="cta.order">Order Now</a>
-                        <a class="btn btn--ghost" href="product.html" data-i18n="cta.view">View Product</a>
+                        <a class="btn btn--primary" href="#como-funciona" data-i18n="index.cta_demo">Ver la demo</a>
+                        <a class="btn btn--outline" href="#kit" data-i18n="index.cta_kit">Conocer la estación</a>
                     </div>
-
-                    <img
-                        src="assets/sensor.svg"
-                        data-i18n-alt="index.hero_sensor_alt"
-                        alt="Clair Alpha Sensor"
-                        class="hero__image"
-                    />
                 </div>
             </section>
 
-            <!-- SENSORS -->
-            <section class="section section--dark" id="about">
+            <!-- PROBLEM: Aedes aegypti photo (deck slide 2) -->
+            <section class="section" id="problema">
                 <div class="container">
-                    <header class="section__header">
-                        <h2 data-i18n="index.sensory_title">Sensory Intelligence</h2>
-                        <p data-i18n="index.sensory_desc">
-                            Advanced spectral analysis providing real-time
-                            visibility into your surrounding air quality with
-                            laboratory-grade precision.
-                        </p>
-                    </header>
+                    <div class="split">
+                        <figure class="photo photo--tall">
+                            <img
+                                src="assets/nino/aedes-aegypti.jpg"
+                                width="1100"
+                                height="1330"
+                                loading="lazy"
+                                decoding="async"
+                                data-i18n-alt="index.img_aedes_alt"
+                                alt="Primer plano de un zancudo Aedes aegypti, transmisor del dengue, picando la piel"
+                            />
+                            <figcaption class="credit" data-i18n="index.credit_aedes">Foto: James Gathany, CDC PHIL 9252, dominio público</figcaption>
+                        </figure>
 
-                    <div class="metrics" role="list" data-i18n-aria="index.metrics_label" aria-label="Metrics">
-                        <article class="metric" role="listitem">
-                            <div class="metric__dial metric__dial--blue">
-                                <div class="metric__value">1.2</div>
-                                <div class="metric__unit">MG/M³</div>
-                            </div>
-                            <div class="metric__label">PM2.5</div>
-                            <div class="metric__desc" data-i18n="index.pm25_desc">
-                                Particulate matter detection.
-                            </div>
-                            <div class="metric__divider"></div>
-                            <div class="metric__tag" data-i18n="index.pm25_tag">OPTIMAL PURITY</div>
-                        </article>
+                        <div class="split__body">
+                            <header class="section__header">
+                                <h2 data-i18n="index.problem_title">El Niño también entra a la casa</h2>
+                                <p data-i18n="index.problem_desc">
+                                    Calor más intenso, lluvias fuertes en la costa norte y
+                                    agua estancada. Los comunicados oficiales existen, pero
+                                    no llegan a la casa ni dicen qué hacer hoy.
+                                </p>
+                            </header>
 
-                        <article class="metric" role="listitem">
-                            <div class="metric__meter">
-                                <div
-                                    class="metric__meter-lines"
-                                    aria-hidden="true"
-                                >
-                                    <div class="metric__meter-line"></div>
-                                    <div class="metric__meter-line"></div>
-                                    <div class="metric__meter-line"></div>
-                                </div>
-                                <div class="metric__meter-pill">
-                                    <span class="metric__value-inline">20.9%</span>
-                                </div>
-                            </div>
-                            <div class="metric__label">CO2</div>
-                            <div class="metric__desc" data-i18n="index.co2_desc">
-                                CO2 saturation monitoring.
-                            </div>
-                            <div class="metric__divider"></div>
-                            <div class="metric__tag" data-i18n="index.co2_tag">ATMOSPHERIC NORM</div>
-                        </article>
-
-                        <article class="metric" role="listitem">
-                            <div class="metric__dial metric__dial--green">
-                                <div class="metric__value">98</div>
-                                <div class="metric__unit">SCORE</div>
-                            </div>
-                            <div class="metric__label" data-i18n="index.cai_label">Clean Air Index</div>
-                            <div class="metric__desc" data-i18n="index.cai_desc">
-                                Holistic calculation of overall air quality.
-                            </div>
-                            <div class="metric__divider"></div>
-                            <div class="metric__tag" data-i18n="index.cai_tag">PRISTINE AIR</div>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            <!-- INVISIBLE PROTECTION -->
-            <section
-                class="section section--dark section--split"
-                data-i18n-aria="index.invisible_title"
-                aria-label="Invisible Protection"
-            >
-                <div class="container text-center">
-                    <h2 class="scale-title" data-i18n="index.invisible_title">Invisible Protection</h2>
-                    <p class="scale-subtitle" data-i18n="index.invisible_desc">
-                        Engineered to blend effortlessly into modern spaces,
-                        Clair features a minimalist industrial design with sharp
-                        angles and an absence of distracting screens, providing
-                        continuous environmental monitoring without compromising
-                        your interior aesthetic.
-                    </p>
-                </div>
-                <div class="scale-image-wrapper">
-                    <img
-                        src="assets/pricing.png"
-                        data-i18n-alt="index.office_alt"
-                        alt="Office environment with Clair Alpha Sensor"
-                        class="scale-image"
-                    />
-                </div>
-            </section>
-
-            <!-- CTA -->
-            <section class="section section--dark section--cta" id="pricing">
-                <div class="container cta">
-                    <div class="cta__copy">
-                        <h2 data-i18n="cta.title">Clean your air</h2>
-                        <p data-i18n="cta.desc">
-                            Take absolute control of your indoor environment.
-                            Precise, real-time tracking for CO2, particulate
-                            matter, temperature, and humidity.
-                        </p>
-                        <div class="cta__buttons">
-                            <a class="btn btn--outline" href="pricing.html" data-i18n="cta.order">Order Now</a>
-                            <a class="btn btn--ghost" href="product.html" data-i18n="cta.view">View Product</a>
+                            <!-- Only verified figure on the page; keep the source next to it -->
+                            <p class="source-note">
+                                <span data-i18n="index.problem_stat">
+                                    En 2023, con el Niño costero y el ciclón Yaku, el CDC
+                                    Perú alertó de una epidemia de dengue: 72 163 casos y
+                                    79 fallecidos notificados solo hasta la semana
+                                    epidemiológica 18.
+                                </span>
+                                <a
+                                    href="https://www.dge.gob.pe/portalnuevo/informacion-publica/prensa/cdc-peru-emite-alerta-epidemiologica-por-epidemia-de-dengue-en-el-pais/"
+                                    target="_blank"
+                                    rel="noopener"
+                                    data-i18n="index.problem_stat_source"
+                                >Fuente: CDC Perú (MINSA), 13 de mayo de 2023</a>
+                            </p>
                         </div>
                     </div>
 
-                    <div class="cta__product">
-                        <img
-                            src="assets/sensor-last.avif"
-                            alt="Clair Alpha Sensor"
-                            class="cta__image"
-                        />
+                    <div class="metrics" role="list" data-i18n-aria="index.problem_label" aria-label="Riesgos">
+                        <article class="metric" role="listitem">
+                            <div class="metric__dial" aria-hidden="true">
+                                <i data-lucide="bug" class="icon icon--lg"></i>
+                            </div>
+                            <h3 class="metric__label" data-i18n="index.dengue_label">Dengue</h3>
+                            <p class="metric__desc" data-i18n="index.dengue_desc">
+                                Las lluvias dejan agua estancada donde se cría el
+                                zancudo Aedes aegypti.
+                            </p>
+                            <div class="metric__tag" data-i18n="index.dengue_tag">Lluvias y agua estancada</div>
+                        </article>
+
+                        <article class="metric" role="listitem">
+                            <div class="metric__dial" aria-hidden="true">
+                                <i data-lucide="thermometer-sun" class="icon icon--lg"></i>
+                            </div>
+                            <h3 class="metric__label" data-i18n="index.heat_label">Golpe de calor</h3>
+                            <p class="metric__desc" data-i18n="index.heat_desc">
+                                Niños y adultos mayores son los más expuestos al
+                                calor dentro de la vivienda.
+                            </p>
+                            <div class="metric__tag" data-i18n="index.heat_tag">Calor más intenso</div>
+                        </article>
+
+                        <article class="metric" role="listitem">
+                            <div class="metric__dial" aria-hidden="true">
+                                <i data-lucide="droplets" class="icon icon--lg"></i>
+                            </div>
+                            <h3 class="metric__label" data-i18n="index.humidity_label">Humedad y moho</h3>
+                            <p class="metric__desc" data-i18n="index.humidity_desc">
+                                La humedad alta sostenida trae moho y problemas
+                                respiratorios.
+                            </p>
+                            <div class="metric__tag" data-i18n="index.humidity_tag">Humedad sostenida</div>
+                        </article>
                     </div>
                 </div>
             </section>
+
+            <!-- HOW IT WORKS -->
+            <section class="section section--surface" id="como-funciona">
+                <div class="container">
+                    <header class="section__header">
+                        <h2 data-i18n="index.how_title">Sensor → IA → acción</h2>
+                        <p data-i18n="index.how_desc">
+                            De una lectura dentro de la casa a un aviso de una línea
+                            que cualquier familia entiende.
+                        </p>
+                    </header>
+
+                    <ol class="specs specs--steps" data-i18n-aria="index.how_label" aria-label="Cómo funciona">
+                        <li class="spec">
+                            <span class="step__num" aria-hidden="true">01</span>
+                            <h3 class="spec__label" data-i18n="index.step1_label">El sensor mide</h3>
+                            <p class="spec__desc" data-i18n="index.step1_desc">
+                                Temperatura, humedad, CO₂ y partículas dentro de la
+                                vivienda, cada pocos minutos.
+                            </p>
+                        </li>
+                        <li class="spec">
+                            <span class="step__num" aria-hidden="true">02</span>
+                            <h3 class="spec__label" data-i18n="index.step2_label">La IA calcula el riesgo</h3>
+                            <p class="spec__desc" data-i18n="index.step2_desc">
+                                Un índice de riesgo de dengue, calor y humedad de 0 a
+                                100, explicado en una frase.
+                            </p>
+                        </li>
+                        <li class="spec">
+                            <span class="step__num" aria-hidden="true">03</span>
+                            <h3 class="spec__label" data-i18n="index.step3_label">La IA redacta la alerta</h3>
+                            <p class="spec__desc" data-i18n="index.step3_desc">
+                                Un aviso en español simple con una sola acción
+                                concreta para hoy.
+                            </p>
+                        </li>
+                        <li class="spec">
+                            <span class="step__num" aria-hidden="true">04</span>
+                            <h3 class="spec__label" data-i18n="index.step4_label">El asistente responde</h3>
+                            <p class="spec__desc" data-i18n="index.step4_desc">
+                                Un asistente de emergencia que contesta con las guías
+                                oficiales y cita la fuente.
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- AI FEATURES -->
+            <section class="section" id="ia">
+                <div class="container">
+                    <header class="section__header">
+                        <h2 data-i18n="index.ai_title">IA que convierte datos en acciones</h2>
+                        <p data-i18n="index.ai_desc">
+                            No es un chat suelto: la IA interpreta lo que pasa en tu
+                            casa, escribe la alerta y responde con fuentes oficiales.
+                        </p>
+                    </header>
+
+                    <div class="specs specs--three" role="list" data-i18n-aria="index.ai_label" aria-label="Funciones de IA">
+                        <article class="spec" role="listitem">
+                            <h3 class="spec__label" data-i18n="index.ai1_label">Índice de riesgo explicable</h3>
+                            <p class="spec__desc" data-i18n="index.ai1_desc">
+                                Reglas con fundamento (rango del zancudo, índice de
+                                calor) y un modelo de lenguaje que explica el
+                                resultado en una frase.
+                            </p>
+                        </article>
+                        <article class="spec" role="listitem">
+                            <h3 class="spec__label" data-i18n="index.ai2_label">Alertas generadas por IA</h3>
+                            <p class="spec__desc" data-i18n="index.ai2_desc">
+                                "Humedad 84 %" se convierte en un aviso claro con una
+                                acción concreta, listo para compartir con la
+                                comunidad.
+                            </p>
+                        </article>
+                        <article class="spec" role="listitem">
+                            <h3 class="spec__label" data-i18n="index.ai3_label">Asistente de emergencia</h3>
+                            <p class="spec__desc" data-i18n="index.ai3_desc">
+                                Responde solo con guías oficiales de MINSA e INDECI,
+                                cita la fuente y, si no lo sabe, lo dice.
+                            </p>
+                        </article>
+                    </div>
+
+                    <!-- Demo (deck slide 5): simulated scenario numbers + real DeepSeek output -->
+                    <figure class="ai-alert">
+                        <div class="ai-alert__scenario">
+                            <p class="label label--accent" data-i18n="index.alert_caption">Ejemplo · escenario simulado en Piura</p>
+                            <p class="ai-alert__risk">
+                                <span class="ai-alert__level" data-i18n="index.alert_level">ALTO</span>
+                                <span class="ai-alert__score">82/100</span>
+                            </p>
+                            <div class="meter" aria-hidden="true"><span class="meter__fill" style="width: 82%"></span></div>
+                            <p class="ai-alert__meta" data-i18n="index.alert_meta">Humedad 85 % · 30 °C · Riesgo de dengue ALTO (82)</p>
+                        </div>
+                        <div class="ai-alert__response">
+                            <p class="label label--teal" data-i18n="index.alert_source">Respuesta real · DeepSeek</p>
+                            <blockquote class="ai-alert__text" data-i18n="index.alert_text">
+                                «El calor y la humedad dentro de su casa favorecen la reproducción del zancudo del dengue. Elimine hoy mismo el agua estancada de baldes, tanques y recipientes. Siga las alertas oficiales de MINSA y SENAMHI.»
+                            </blockquote>
+                        </div>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- KIT -->
+            <section class="section section--surface" id="kit">
+                <div class="container">
+                    <header class="section__header">
+                        <h2 data-i18n="index.kit_title">Estación Clair Niño</h2>
+                        <p data-i18n="index.kit_desc">
+                            Hardware de bajo costo que ya existe, pensado para
+                            instalarse en una casa o en el barrio.
+                        </p>
+                    </header>
+
+                    <div class="specs specs--kit" role="list" data-i18n-aria="index.kit_label" aria-label="Componentes del kit">
+                        <article class="spec" role="listitem">
+                            <h3 class="spec__label">SHT40</h3>
+                            <p class="spec__desc" data-i18n="index.kit_sht40">Temperatura y humedad para el índice de calor y el riesgo de dengue.</p>
+                        </article>
+                        <article class="spec" role="listitem">
+                            <h3 class="spec__label">SCD41</h3>
+                            <p class="spec__desc" data-i18n="index.kit_scd41">CO₂ para saber cuándo ventilar la vivienda.</p>
+                        </article>
+                        <article class="spec" role="listitem">
+                            <h3 class="spec__label">SPS30 / PMS5003</h3>
+                            <p class="spec__desc" data-i18n="index.kit_pm">Partículas PM2.5 y PM10 en el aire.</p>
+                        </article>
+                        <article class="spec" role="listitem">
+                            <h3 class="spec__label" data-i18n="index.kit_rain_label">Pluviómetro</h3>
+                            <p class="spec__desc" data-i18n="index.kit_rain">Pluviómetro de balancín que mide la lluvia acumulada.</p>
+                        </article>
+                        <article class="spec" role="listitem">
+                            <h3 class="spec__label" data-i18n="index.kit_level_label">Nivel de agua</h3>
+                            <p class="spec__desc" data-i18n="index.kit_level">Sensor ultrasónico o de radar para anticipar inundaciones y huaicos.</p>
+                        </article>
+                        <article class="spec" role="listitem">
+                            <h3 class="spec__label">ESP32</h3>
+                            <p class="spec__desc" data-i18n="index.kit_esp32">Procesa las lecturas y las envía por Wi-Fi.</p>
+                        </article>
+                        <article class="spec" role="listitem">
+                            <h3 class="spec__label" data-i18n="index.kit_case_label">Carcasa IP65</h3>
+                            <p class="spec__desc" data-i18n="index.kit_case">Para exteriores, con batería y panel solar opcional.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MUNICIPALITIES / ROADMAP: Río Piura photo (deck slide 7) -->
+            <section class="section section--cta" id="municipios">
+                <div class="container cta">
+                    <figure class="photo photo--tall cta__product">
+                        <img
+                            src="assets/nino/rio-piura-2017.jpg"
+                            width="1000"
+                            height="1563"
+                            loading="lazy"
+                            decoding="async"
+                            data-i18n-alt="index.img_piura_alt"
+                            alt="Vista aérea del río Piura crecido en marzo de 2017, con sus puentes y la ciudad en la orilla"
+                        />
+                        <!-- CC BY 2.0: attribution required -->
+                        <figcaption class="credit">
+                            <span data-i18n="index.credit_piura">Foto: río Piura crecido, marzo 2017 · Ministerio de Defensa del Perú, CC BY 2.0</span>
+                            <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener license" data-i18n="index.credit_license">Licencia</a>
+                        </figcaption>
+                    </figure>
+
+                    <div class="cta__copy">
+                        <h2 data-i18n="index.muni_title">Para municipios y comunidades</h2>
+                        <p data-i18n="index.muni_desc">
+                            Con varias estaciones en el barrio, los municipios podrán
+                            priorizar dónde fumigar o enviar ayuda primero.
+                        </p>
+                        <h3 class="roadmap__title label" data-i18n="index.roadmap_title">Próximos pasos</h3>
+                        <ul class="roadmap" role="list">
+                            <li data-i18n="index.roadmap1">Alertas sin internet, con IA en el propio dispositivo</li>
+                            <li data-i18n="index.roadmap2">Mapa de riesgo para municipios</li>
+                            <li data-i18n="index.roadmap3">Canal de WhatsApp</li>
+                            <li data-i18n="index.roadmap4">Alertas en quechua</li>
+                        </ul>
+                        <div class="cta__buttons">
+                            <a class="btn btn--primary" href="#como-funciona" data-i18n="index.cta_demo">Ver la demo</a>
+                            <a class="btn btn--outline" href="contact.html" data-i18n="index.cta_contact">Contáctanos</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DISCLAIMER (required by the hackathon rules) over the Máncora photo (deck slide 8) -->
+            <aside class="disclaimer" data-i18n-aria="index.disclaimer_label" aria-label="Aviso">
+                <img
+                    class="disclaimer__bg"
+                    src="assets/nino/mancora-2026.jpg"
+                    width="1920"
+                    height="1080"
+                    loading="lazy"
+                    decoding="async"
+                    data-i18n-alt="index.img_mancora_alt"
+                    alt="Playa de Máncora, Piura, con bañistas en el mar bajo un cielo despejado"
+                />
+                <p class="credit credit--plate" data-i18n="index.credit_mancora">Foto: playa de Máncora, Piura · El Surquillano, CC0</p>
+                <div class="container disclaimer__inner">
+                    <p class="disclaimer__plate" data-i18n="index.disclaimer">
+                        Estimación orientativa. Siga siempre las alertas oficiales
+                        de SENAMHI, INDECI y MINSA.
+                    </p>
+                </div>
+            </aside>
         </main>
 
         <footer class="footer">
             <div class="container footer__inner">
-                <small>Clair © 2026</small>
-                <ul class="footer__links" role="list" data-i18n-aria="footer.links_label" aria-label="Links">
-                    <li><a href="about.html" data-i18n="page.about">About</a></li>
-                    <li><a href="product.html" data-i18n="page.product">Product</a></li>
-                    <li><a href="pricing.html" data-i18n="page.pricing">Pricing</a></li>
-                    <li><a href="privacy.html" data-i18n="page.privacy">Privacy</a></li>
-                    <li><a href="contact.html" data-i18n="page.contact">Contact</a></li>
+                <small>Clair Niño © 2026</small>
+                <ul class="footer__links" role="list" data-i18n-aria="footer.links_label" aria-label="Enlaces">
+                    <li><a href="about.html" data-i18n="page.about">Nosotros</a></li>
+                    <li><a href="product.html" data-i18n="page.product">Producto</a></li>
+                    <li><a href="pricing.html" data-i18n="page.pricing">Precios</a></li>
+                    <li><a href="privacy.html" data-i18n="page.privacy">Privacidad</a></li>
+                    <li><a href="contact.html" data-i18n="page.contact">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="container footer__credits">
+                <p class="footer__credits-title" data-i18n="index.credits_title">Créditos de imágenes (Wikimedia Commons)</p>
+                <ul role="list">
+                    <li>
+                        <a href="https://commons.wikimedia.org/wiki/File:El_Ni%C3%B1o_2026-_Sea_Surface_Temperature_Anomaly_(2025_vs_2026)_%E2%80%93_Updated_Daily_(SVS5688).jpg" target="_blank" rel="noopener" data-i18n="index.credits_sst">Mapa de anomalía de temperatura del mar: NASA's Scientific Visualization Studio, Kel Elkins · dominio público</a>
+                    </li>
+                    <li>
+                        <a href="https://commons.wikimedia.org/wiki/File:Aedes_aegypti_CDC9252.tif" target="_blank" rel="noopener" data-i18n="index.credits_aedes">Aedes aegypti: James Gathany, CDC PHIL 9252 · dominio público</a>
+                    </li>
+                    <li>
+                        <a href="https://commons.wikimedia.org/wiki/File:MINISTRO_NIETO_VIAJ%C3%93_A_PIURA_PARA_SUPERVISAR_LA_RESPUESTA_DEL_SECTOR_DEFENSA_Y_LAS_FFAA_ANTE_LA_EMERGENCIA_(33008722853).jpg" target="_blank" rel="noopener" data-i18n="index.credits_piura">Río Piura crecido, 28/03/2017: Galería del Ministerio de Defensa del Perú (vía Flickr)</a>
+                        · <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener license">CC BY 2.0</a>
+                    </li>
+                    <li>
+                        <a href="https://commons.wikimedia.org/wiki/File:Playa_M%C3%A1ncora_2026.jpg" target="_blank" rel="noopener" data-i18n="index.credits_mancora">Playa de Máncora, 08/02/2026: El Surquillano · CC0 1.0</a>
+                    </li>
                 </ul>
             </div>
         </footer>
